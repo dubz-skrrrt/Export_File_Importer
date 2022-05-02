@@ -29,6 +29,9 @@ try:
                                                                         PRIMARY KEY (Id)) """
         result = cursor.execute(personal_details_table_Query)
         print("Personal Details Table created successfully ")
+
+        excel_sheet = xlrd.open_workbook('') #variable name of the file
+        sheet_name = excel_sheet.sheet_names()
 except Error as e:
     print("Error while connecting to MySQL", e)
 
