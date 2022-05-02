@@ -37,3 +37,14 @@ finally:
         connection.close()
 
 #personal_details_table = "CREATE TABLE IF NOT EXISTS personal_details(id int)"
+def Converter():
+
+     #reading file content
+     f = open(fname, "r")
+
+def FindFileAction():
+    #uploading file
+    filename = filedialog.askopenfilename(filetypes =[('Text Files', '*.xls')])
+    global fname
+    fname=filename
+
