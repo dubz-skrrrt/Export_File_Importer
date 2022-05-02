@@ -1,6 +1,7 @@
 import mysql.connector
 from mysql.connector import Error
 from tkinter import filedialog
+import pandas as pd
 import xlrd
 
 
@@ -40,12 +41,16 @@ finally:
         cursor.close()
         connection.close()
 def Converter():
-     #reading file content
-     f = open(fname, "r")
-
+    #reading file content
+    workbook = xlrd.open_workbook(fname)
+    worksheet = workbook.sheet_by_index(0)
+    for i in range(0, 5):
+        for j in range(0, 3):
+            print(worksheet.cell_value(i, j), end='\t')
+        print('')
 def FindFileAction():
     #uploading file
-    filename = filedialog.askopenfilename(filetypes =[('Text Files', '*.xls')])
-    global fname
+    filename = filedialog.askopenfilename(filetypes =[('Text Files', '*.xlsx')])
     fname=filename
+    global fname
 
