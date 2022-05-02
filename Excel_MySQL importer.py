@@ -44,8 +44,8 @@ def Converter(file):
     #reading file content
     workbook = xlrd.open_workbook(file)
     worksheet = workbook.sheet_by_index(0)
-    for i in range(min(worksheet), max(worksheet)):
-        for j in range(min(worksheet), max(worksheet)):
+    for i in range(0, worksheet.ncols):
+        for j in range(0, worksheet.nrows):
             print(worksheet.cell_value(i, j), end='\t')
         print('')
 def FindFileAction():
