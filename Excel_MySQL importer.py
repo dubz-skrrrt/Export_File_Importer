@@ -11,7 +11,7 @@ def Database(file):
     df = pd.read_excel(file)
     print(df.head())
     engine = create_engine('mysql://root:qwerty1234@localhost/ExcelFileImporter') #after//= user:password@localhost(or ip address)/database name
-    df.to_sql('personal_detail', con=engine, if_exists='append', index=False)
+    df.to_sql('personal_detail', con=engine, if_exists='replace', index=False)
 
 
 def Converter(file):
