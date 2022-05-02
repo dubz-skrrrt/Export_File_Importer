@@ -1,5 +1,6 @@
 import mysql.connector
 from mysql.connector import Error
+from tkinter import filedialog
 import xlrd
 
 
@@ -35,10 +36,7 @@ finally:
     if connection.is_connected():
         cursor.close()
         connection.close()
-
-#personal_details_table = "CREATE TABLE IF NOT EXISTS personal_details(id int)"
 def Converter():
-
      #reading file content
      f = open(fname, "r")
 
